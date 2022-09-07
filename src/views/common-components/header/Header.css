@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 10rem;
+    height: 3rem;
+}
+
+.header-menu {
+    list-style: none;
+    display: flex;
+    color: white;
+    
+}
+
+.header-menu > li{
+    padding: 10px 20px;
+    position: relative;
+}
+
+.header-menu>li:hover {
+    cursor: pointer;
+    color: var(--orange);
+    border: 0.2rem solid #F06246;
+    border-radius: 255px 15px 255px 15px/15px 225px 15px 255px;
+
+}
+
+.header-menu>li:hover::after {
+    content: "";
+    background: url('/public/down-arrow.svg') center bottom no-repeat;
+    background-size: contain;
+    width: 23px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 768px){ 
+    .header>:nth-child(2) {
+        position: fixed;
+        right: 2rem;
+        z-index: 99;
+    }
+
+    .header-menu {
+        flex-direction: column;
+        background-color: var(--appColor);
+        padding: 2rem;
+    }
+}

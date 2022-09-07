@@ -1,0 +1,78 @@
+.header-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 5rem;
+    height: 3rem;
+    z-index: 100;
+    background-color: #363d42;
+}
+
+.logo {
+    width: 10rem;
+    height: 3rem;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.cta {
+    margin-left: 3rem;
+}
+
+.joinAnchor {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    background-color: #0072CE;
+    padding: 0.5rem 1rem 0.5rem;
+    position: relative;
+    white-space: nowrap;
+}
+
+.joinAnchor:hover {
+    background-color: #133156;
+}
+
+.joinAnchor:hover:before {
+    background-color: #133156;
+}
+
+.joinAnchor:hover:after {
+    filter: brightness(2.5);
+}
+
+
+.joinAnchor::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 100%;
+    background-color: #0072CE;
+    position: absolute;
+    top: 0;
+    right: -1.5rem;
+    transform: skewX(-20deg);
+}
+
+.joinAnchor::after {
+    content: "";
+    background: url('/public/button-arrow-secondary.svg') center right no-repeat;
+    background-size: contain;
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    position: absolute;
+    top: -0.5rem;
+    right: -3.5rem;
+    transition: all 0.5s ease;
+    filter: brightness(1);
+}
