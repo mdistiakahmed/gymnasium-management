@@ -93,3 +93,9 @@
     display: inline-block;
     position: relative;
 }
+
+@media(max-width: 1024px) {
+    .menu-item-container{
+        text-align: center;
+    }
+}

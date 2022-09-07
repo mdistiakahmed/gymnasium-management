@@ -1,12 +1,11 @@
-import React from 'react';
-import Header2 from '../../common-components/header/Header2';
-import Footer from '../footer/Footer';
-import Join from '../join/Join';
-import Plans from '../plans/Plans';
-import Programs from '../programs/Programs';
-import Reasons from '../reasons/Reasons';
-import Testimonials from '../testimonials/Testimonials';
+import Footer from '../../common-components/footer/Footer';
+import { Header } from '../../common-components/header';
 import Hero from './Hero';
+import Join from './Join';
+import Plans from './Plans';
+import Programs from './Programs';
+import Reasons from './Reasons';
+import Testimonials from './Testimonials';
 
 const Home = () => {
     return (
@@ -16,7 +15,7 @@ const Home = () => {
                 flexDirection: 'column',
             }}
         >
-            <Header2 />
+            <Header />
             <Hero />
             <Programs />
             <Reasons />

@@ -1,6 +1,14 @@
-.header {
+.header-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    padding: 0.5rem 5rem;
+    height: 3rem;
+    z-index: 100;
+    background-color: #363d42;
 }
 
 .logo {
@@ -8,49 +16,95 @@
     height: 3rem;
 }
 
-.header-menu {
-    list-style: none;
+.menu {
     display: flex;
+    align-items: center;
+    gap: 1rem;
     color: white;
-    
 }
 
-.header-menu > li{
-    padding: 10px 20px;
+.cta {
+    margin-left: 3rem;
+}
+
+.joinAnchor {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    background-color: #0072CE;
+    padding: 0.5rem 1rem 0.5rem;
     position: relative;
+    white-space: nowrap;
 }
 
-.header-menu>li:hover {
-    cursor: pointer;
-    color: var(--orange);
-    border: 0.2rem solid #F06246;
-    border-radius: 255px 15px 255px 15px/15px 225px 15px 255px;
-
+.joinAnchor:hover {
+    background-color: #133156;
 }
 
-.header-menu>li:hover::after {
+.joinAnchor:hover:before {
+    background-color: #133156;
+}
+
+.joinAnchor:hover:after {
+    filter: brightness(2.5);
+}
+
+
+.joinAnchor::before {
     content: "";
-    background: url('/public/down-arrow.svg') center bottom no-repeat;
+    display: block;
+    width: 2rem;
+    height: 100%;
+    background-color: #0072CE;
+    position: absolute;
+    top: 0;
+    right: -1.5rem;
+    transform: skewX(-20deg);
+}
+
+.joinAnchor::after {
+    content: "";
+    background: url('/public/button-arrow-secondary.svg') center right no-repeat;
     background-size: contain;
-    width: 23px;
-    height: 30px;
+    width: 4rem;
+    height: 4rem;
     display: block;
     position: absolute;
-    bottom: -35px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: -0.5rem;
+    right: -3.5rem;
+    transition: all 0.5s ease;
+    filter: brightness(1);
 }
 
-@media screen and (max-width: 768px){ 
-    .header>:nth-child(2) {
-        position: fixed;
-        right: 2rem;
-        z-index: 99;
+.header-container label {
+    color: #ffff;
+    display: none;
+   
+}
+
+#menu-bar {
+    display: none;
+}
+
+@media(max-width: 1024px) {
+    .header-container label {
+        display: initial;
+        
+    }
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0 ;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        color: black;
     }
 
-    .header-menu {
+    .menu ul {
         flex-direction: column;
-        background-color: var(--appColor);
-        padding: 2rem;
+        
     }
 }
